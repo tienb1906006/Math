@@ -1,0 +1,140 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+<style type="text/css">
+
+#menu {background:#0f292f;
+overflow: hidden;
+padding: 1px;
+color: white;
+font-size: 25px;
+text-align: right;
+width: 1200; 
+margin: 8px 30px 34px 83px;
+margin-top: 5px;
+}
+#menu li {
+display: inline-table;
+margin-right: 30px;
+}
+#menu li a{
+padding: 5px ;
+text-decoration:none;
+color: #14a098;
+font-weight:bold;
+border-radius: 5px;
+
+}
+#menu li a:hover {
+background:#00887a;
+color:white;
+text-decoration:none;
+-moz-border-radius:px;
+-webkit-border-radius:17px;
+}
+
+#nội dung{
+font-size:1.2en;
+margin:15px 0px;
+overflow:hidden;
+}
+#phuongtrinh{
+background:#CCF;
+
+margin: auto auto 100px auto;
+
+}
+table {
+    margin: auto;
+
+}
+caption {
+    color: red;
+    font-size: 35px;
+
+}
+</style>
+<script type="text/javascript">
+function GiaiPT()
+{
+kq.innerText=" ";
+if(isNaN(hesoA.value) || isNaN(hesoB.value)|| hesoA.value=="" || hesoB.value=="")
+kq.innerText="Lỗi nhập liệu chưa đúng !";
+else
+{
+var A=parseFloat(hesoA.value);
+var B=parseFloat(hesoB.value);
+var C=parseFloat(hesoC.value);
+var del=B*B-(4*A*C);
+if(del<0)
+kq.innerText="Phương trình có vô số nghiệm";
+if(del==0)
+{
+var x=-B/(2*A);
+kq.innerText="Phương trình có nghiệm kép"+x;
+}
+if(del>0)
+{
+var x1 = (-B + (Math.sqrt(del))/2*A);
+var x2 = (-B - (Math.sqrt(del))/2*A);
+kq.innerText="phương trình có 2 nghiệm phân biệt X1 = " + x1 + " và x2 = " + x2;
+}
+
+</script>
+
+</head>
+
+<body bgcolor="#14a098"><table width="600" height="300" border="1" bgcolor="#f4976c">
+    <div id="bao quanh">
+         <div id="menu" >
+
+            <ul>
+            <li><a href="https://www.ctu.edu.vn/"> <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/6/6c/Logo_Dai_hoc_Can_Tho.svg/2048px-Logo_Dai_hoc_Can_Tho.svg.png"width="40"> ĐẠI HỌC CẦN THƠ </a></li> 
+            <li><a href="lien he.html"> GIỚI THIỆU </a></li>      
+            <li><a href="form dang nhap.html">PHƯƠNG TRÌNH BẬC 2 </a></li>
+            <li><a href="lien he.html">ĐỒ THỊ </a></li>
+            <li> <a href="https://www.facebook.com/profile.php?id=100005205167949" class="fab fa-facebook"></a></li>
+             <li> <a href="#" class="fas fa-envelope-open-text"></a></li>
+        </div> 
+  
+<div id=phuongtrinh> 
+<caption>
+<b>GIẢI PHƯƠNG TRÌNH BẬC HAI</b>
+</caption>
+<tr>
+<td width="200"><blockquote>
+
+<p align="left">Nhập hệ số A:</p>
+</blockquote></td>
+<td width="198"><input name="hesoA" type="text" id="hesoA" value=""></td>
+</tr>
+<tr> 
+<td><blockquote>
+
+<p align="left">Nhập hệ số B:</p>
+</blockquote></td>
+<td><input name="hesoB" type="text" id="hesoB" value=""></td>
+</tr>
+<tr>
+<td width="190"><blockquote>
+
+<p align="left">Nhập hệ số C:</p>
+</blockquote></td>
+<td width="198"><input name="hesoC" type="text" id="hesoC" value=""></td>
+</tr>
+<tr>
+<td colspan="2"><div align="center">
+
+<input name="Button" type="button" onClick="GiaiPT()" value="Giải phương trình">
+</div></td>
+</tr>
+<tr>
+<td colspan="2" align="center" bgcolor="#00FFFF" id="kq">&nbsp;</td>
+</tr>
+</table>
+</div>
+</div >
+</body>
+</html>
