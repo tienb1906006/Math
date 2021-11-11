@@ -1,274 +1,135 @@
-
 <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://yu.ctu.edu.vn/images/upload/article/2020/03/0305-logo-ctu.png">
-    <title>Đồ thị</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.min.js"
-        integrity="sha512-2/6UJO9SBO6ElzgeETlFUdHgMkhe+0QZH64KTtz18x6GA3Z6PpBHDJFvWrGCsXVQI1E2S/pB4Zqqdn0MEv5+Vg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"
-        integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.0.2/chartjs-plugin-annotation.min.js"
-        integrity="sha512-FuXN8O36qmtA+vRJyRoAxPcThh/1KJJp7WSRnjCpqA+13HYGrSWiyzrCHalCWi42L5qH1jt88lX5wy5JyFxhfQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <html >
 
-    <link href="chart.css" rel="stylesheet" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.min.js"
+                integrity="sha512-2/6UJO9SBO6ElzgeETlFUdHgMkhe+0QZH64KTtz18x6GA3Z6PpBHDJFvWrGCsXVQI1E2S/pB4Zqqdn0MEv5+Vg=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"
+                integrity="sha512-GMGzUEevhWh8Tc/njS0bDpwgxdCJLQBWG3Z2Ct+JGOpVnEmjvNx6ts4v6A2XJf1HOrtOsfhv3hBKpK9kE5z8AQ=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.0.2/chartjs-plugin-annotation.min.js"
+                integrity="sha512-FuXN8O36qmtA+vRJyRoAxPcThh/1KJJp7WSRnjCpqA+13HYGrSWiyzrCHalCWi42L5qH1jt88lX5wy5JyFxhfQ=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         
-<style type="text/css">
-
-#menu {background:#0f292f;
-overflow: hidden;
-padding: 1px;
-color: white;
-font-size: 25px;
-text-align: right;
-width: 1200; 
-margin: 8px 30px 34px 83px;
-margin-top: 5px;
-}
-#menu li {
-display: inline-table;
-margin-right: 30px;
-}
-#menu li a{
-padding: 5px ;
-text-decoration:none;
-color: #14a098;
-font-weight:bold;
-border-radius: 5px;
-
-}
-#menu li a:hover {
-background:#00887a;
-color:white;
-text-decoration:none;
--moz-border-radius:px;
--webkit-border-radius:17px;
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-.container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 0 25px;
-}
-
-.numbers input {
-    margin: 10px 0;
-    width: 77%;
-    border: 2px solid #000;
-    outline: none;
-    height: 25px;
-    padding: 10px 5px;
-    font-size: 16px;
-}
-
-.numbers label {
-    margin-right: 10px;
-}
-
-.btn {
-    text-align:right;
-    margin-right:9%;
-    margin-top: 15px;
-}
-
-button {
-    width: 85px;
-    margin-left: 15px;
-    background: none; 
-    font-size:16px;
-    padding: 2px 0;
-    border: 2px solid #000;       
-    border-radius: 15px;
-    cursor: pointer;
-}
-
-.result {
-    margin-top: 15px;
-    line-height:1.5;
-}
-
-<style>
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: "Open Sans", sans-serif;
-    }
-
-    :root {
-        --white: #fff;
-        --black: #000;
-        --primary: rgb(12, 247, 247);
-    }
-
-    .wide {
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-
-
-    header {
-        border-bottom: 1px solid #ccc;
-    }
-
-    .header_container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .header_container img {
-        max-width: 80px;
-        box-shadow: var(--white) 0px 0px 10px 5px;
-        margin-top: 5px;
-        border-radius: 10px;
-    }
-
-  
-   
-    .slider {
-        height: 200px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .slider_container {
-        text-align: center;
-    }
-
-    .slider_container h1,
-    .slider_container h2 {
-        padding: 10px 0;
-        color: var(--white);
-    }
-
-    .slider_container h1 {
-        text-transform: uppercase;
-        font-size: 60px;
-    }
-
-    .slider_container h2 {
-        font-size: 50px;
-        text-transform: capitalize;
-        text-align: center;
-        text-shadow: rgb(255, 0, 76) 0px 5px 15px;
-        color: rgb(252, 255, 104);
-    }
-
-
-
-    .content {
-        margin-left: 25px;
-        text-align: left;
-        font-size: 19px;
-    }
-
-    .container {
-        color: var(--white);
-    }
-
-    .container .about {
-        max-width: 800px;
-
-        line-height: 1.5;
-        padding: 0 5px;
-        border: 2px solid var(--white);
-        padding: 15px;
-        box-shadow: #fff 0px 0px 20px 5px;
-        border-radius: 15px;
-        text-align: center;
-        margin: 0 auto;
-    }
-
-    @keyframes identifier {
-        from {
-            opacity: 0;
-            transform: rotateX(90deg);
-        }
-
-        to {
-            opacity: 1;
-            transform: rotateX(0);
-        }
-    }
-
-    .chart_container {
-        margin-top: 25px;
-    }
-
-    .chart_container ul {
-        text-align: center;
-    }
-
-    .chart_container ul li {
-        display: inline-block;
-        color: rgb(255, 255, 255);
-        list-style: none;
-        padding: 10px;
-        margin: 0 5px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .chart_container ul li.active {
-        background-color: #ffcc00;
-        color: #000;
-    }
-
-    .chart_container h2 {
-        font-weight: 500;
-        text-align: center;
-        margin: 25px;
+        
+        <style type="text/css">
+        #menu {background:#0f292f;
+        overflow: hidden;
+        padding: 1px;
+        color: white;
         font-size: 35px;
-        text-shadow: rgb(255, 0, 76) 0px 5px 15px;
-        color: rgb(252, 255, 104);
-
-    }
-
-    .form_data {
-        margin-top: 25px;
-    }
-
+        text-align: right;
+        width: 1200; 
+        margin: 8px 30px 34px 83px;
+        margin-top: 5px;
+        }
+        #menu li {
+        display: inline-table;
+        margin-right: 30px;
+        }
+        #menu li a{
+        padding: 5px ;
+        text-decoration:none;
+        color: #14a098;
+        font-weight:bold;
+        border-radius: 5px;
+        
+        }
+        #menu li a:hover {
+        background:#00887a;
+        color:white;
+        text-decoration:none;
+        -moz-border-radius:px;
+        -webkit-border-radius:17px;
+        }
+        
+        
+        .contentt {
+                margin-left: 25px;
+                text-align: left;
+                font-size: 19px;
+             margin-top: 5px;
+          
+            }
+        
+            .container {
+                color: var(--white);
+                
+            }
+            .chart_container {
+                margin-top: 25px;
+                
+            }
+        
+            .chart_container ul {
+                text-align: left;
+               
+            }
+        
+            .chart_container ul li {
+                display: inline-block;
+                color: rgb(255, 255, 255);
+                list-style: none;
+                padding: 10px;
+                margin: 0 5px;
+                border-radius: 5px;
+                cursor: pointer;
+                background-color: rgb(0, 4, 255);
+            }
+        
+            .chart_container ul li.active {
+                background-color: #fa0053de;
+                color: #000;
+            }
+        
+            .chart_container h2 {
+                font-weight: 500;
+                text-align: left;
+                margin: 25px;
+                font-size: 35px;
+                text-shadow: rgb(255, 0, 0) 0px 5px 15px;
+                color: rgb(252, 255, 104);
+        
+            }
+            .form_data {
+                margin-top: 25px;
+                position: relative;
+                
+            }
+    
     .form_data form {
-        display: flex;
-        justify-content: space-between;
+        
         align-items: center;
-        margin-top: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+       
     }
 
     .form_data input {
         padding: 5px 3px;
         border-radius: 5px;
         font-size: 15px;
+        text-align: center;
+        background-color: rgb(255, 255, 255);
     }
 
     .form_data h3 {
-        text-shadow: rgb(255, 0, 76) 0px 5px 15px;
-        color: rgb(252, 255, 104);
+        font-family: verdana;
+        color: rgb(255, 0, 0);
         text-align: center;
+        
     }
 
     .form_data label {
         color: #000;
-        background-color: hsl(117, 100%, 50%);
+        background-color: hsl(59, 100%, 49%);
         padding: 3px 10px;
         border-radius: 15px;
         display: inline-block;
@@ -276,13 +137,17 @@ button {
     }
 
     #canvas-container {
-        height: 500px;
+        height: 400px;
         background-color: rgb(255, 255, 255);
-        margin-top: 25px;
-        border-radius: 5px;
-        padding: 15px;
+        padding: 35px;
+        border: 1px solid dodgerblue;
+        border-radius: 20px;
+        width: 1000; 
+        margin: 20 130 5 130;
+        margin-top: 35px;
+       
+  
     }
-
     .data_settings {
         margin-top: 25px;
     }
@@ -307,7 +172,7 @@ button {
     }
 
     .input-group button {
-        background-color: #73ff00;
+        background-color: #ffef14;
         padding: 2px 10px;
         border: none;
         border-radius: 5px;
@@ -329,99 +194,107 @@ button {
         border-radius: 5px;
         margin-top: 10px;
     }
+    
+    
+    
 </style>
-
-</style>
+</head>
 <body bgcolor="#14a098">
 
         <div id="menu" >
 
+        <ul>
             <ul>
-            <li><a href="https://www.ctu.edu.vn/"> <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/6/6c/Logo_Dai_hoc_Can_Tho.svg/2048px-Logo_Dai_hoc_Can_Tho.svg.png"width="40"> ĐẠI HỌC CẦN THƠ </a></li> 
-            <li><a href="lien he.html"><i class="fas fa-home"></i> THÔNG TIN SINH VIÊN </a></li>      
-            <li><a href="form dang nhap.html">PHƯƠNG TRÌNH BẬC 2 </a></li>
-            <li><a href="lien he.html">ĐỒ THỊ </a></li>
-            <li> <a href="https://www.facebook.com/profile.php?id=100005205167949" class="fab fa-facebook"></a></li>
-             <li> <a href="#" class="fas fa-envelope-open-text"></a></li>
+
+                <li><a href="https://tienb1906006.github.io/Math/GT"> MÔ TẢ THÔNG TIN </a></li>      
+                 <li><a href="https://tienb1906006.github.io/Math/ptbac2">PHƯƠNG TRÌNH BẬC 2 </a></li>
+                 <li><a href="https://tienb1906006.github.io/Math/dothi">ĐỒ THỊ </a></li>
+                <li> <a href="https://www.facebook.com/profile.php?id=100005205167949" class="fab fa-facebook"></a></li>
+                 <li> <a href="https://www.ctu.edu.vn/" class="fas fa-home"></a></li>
+             </ul>
+
         </div> 
       
-            <div>
-                <div class="chart_container">
-                    <div class="content">
-                        <h2>Các hàm cơ bản</h2>
-                        <ul id="menu-container" class="">
-                            <li class="graphSelect chart_type active" id="bacHai">Đồ thị bậc hai</li>
-                            <li class="graphSelect chart_type" id="bacBa">Đồ thị bậc ba</li>
-                            <li class="graphSelect chart_type" id="bacBon">Đồ thị bậc bốn</li>
+<div class="box">
 
-                        </ul>
-                        <h2>Các hàm lượng giác</h2>
-                        <ul>
-                            <li class="graphSelect chart_type" id="sin">Đồ thị hàm sin</li>
-                            <li class="graphSelect chart_type" id="cos">Đồ thị hàm cos</li>
-                            <li class="graphSelect chart_type" id="tan">Đồ thị hàm tan</li>
-                        </ul>
-                        <div class="form_data">
-                            <h3>Nhập hệ số</h3>
-                            <form class="coeff-form" role="presentation" autocomplete="off">
-                                <div class="input_group" id="a-coeff">
-                                    <label for="number_a">a</label>
-                                    <input type="text" class="form-control" id="number_a" />
-                                </div>
+<div>
+    <div class="chart_container">
+        <div class="contentt">
+          
+<center>
+            <table tt border="5">
+                <tr>
+                    <td>
+            
+            <ul id="menu-container" class="">
+                <li class="graphSelect chart_type active" id="bacHai">Đồ thị bậc hai</li>
+                <li class="graphSelect chart_type" id="bacBa">Đồ thị bậc ba</li>
+                <li class="graphSelect chart_type" id="bacBon">Đồ thị bậc bốn</li>
 
-                                <div class="input_group" id="b-coeff">
-                                    <label for="number_b">b</label>
-                                    <input type="text" class="form-control" id="number_b" />
-                                </div>
-
-                                <div class="input_group" id="c-coeff">
-                                    <label for="number_c">c</label>
-                                    <input type="text" class="form-control" id="number_c" />
-                                </div>
-
-                                <div class="input-group" id="d-coeff">
-                                    <label for="number_d">d</label>
-                                    <input type="text" class="form-control" id="number_d" />
-                                </div>
-                            </form>
-                        </div>
+            </ul>
+            
+            <ul>
+                <li class="graphSelect chart_type" id="sin">Đồ thị hàm sin</li>
+                <li class="graphSelect chart_type" id="cos">Đồ thị hàm cos</li>
+                <li class="graphSelect chart_type" id="tan">Đồ thị hàm tan</li>
+            </ul>
+        </td>
+    </div>
+            <td>
+            <div class="form_data" >
+                <h3>Nhập hệ số</h3>
+                <form class="coeff-form" role="presentation" autocomplete="off">
+                    <div class="input_group" id="a-coeff">
+                        <label for="number_a">a</label>
+                        <input type="text" class="form-control" id="number_a" />
                     </div>
 
-                    <div class="content">
-                        <div id="canvas-container">
-                            <canvas id="myChart"></canvas>
-                        </div>
+                    <div class="input_group" id="b-coeff">
+                        <label for="number_b">b</label>
+                        <input type="text" class="form-control" id="number_b" />
                     </div>
 
-
-                    <div class="container">
-                        <span>Màu sắc</span>
-                        <div class="color_group">
-                            <div class="colorpicker" id="AAAAAA"></div>
-                            <div class="colorpicker" id="7f00ff"></div>
-                            <div class="colorpicker" id="8B4513"></div>
-                            <div class="colorpicker" id="8B3A3A"></div>
-                            <div class="colorpicker" id="fffb38"></div>
-                            <div class="colorpicker" id="00FF00"></div>
-                        </div>
+                    <div class="input_group" id="c-coeff">
+                        <label for="number_c">c</label>
+                        <input type="text" class="form-control" id="number_c" />
                     </div>
 
-                    </form>
-
-                </div>
+                    <div class="input-group" id="d-coeff">
+                        <label for="number_d">d</label>
+                        <input type="text" class="form-control" id="number_d" />
+                    </div>
+                </form>
+                
+            </div>
+            </td>
+            </tr>
+        </table>
+    </center>
+        </div>
+</div>
+        <div class="content">
+            <div id="canvas-container">
+                <canvas id="myChart"></canvas>
             </div>
         </div>
-    </div>
-    <script>
-        const colorPickers = document.querySelectorAll('.container .colorpicker')
-        colorPickers.forEach(color => {
-            color.style.backgroundColor = '#' + color.id
-        })
-    </script>
 
-    <script type="module" src="chart.js"></script>
+        </div>
+        </form>
+
+    </div>
+</div>
+</div>
+</div>
+<script>
+const colorPickers = document.querySelectorAll('.container .colorpicker')
+colorPickers.forEach(color => {
+color.style.backgroundColor = '#' + color.id
+})
+</script>
+
+<script type="module" src="chart.js"></script>
+
+</div>
 </body>
 
-</html>   
-</div >
 </html>
